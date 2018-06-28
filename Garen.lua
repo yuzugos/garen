@@ -4,4 +4,4 @@ require ("DamageLib")
 
 GarenMenu = Menu("Garen", "Garen)
 
-print("Garen Successfully Loaded!")
+PrintChat("<font color=\"#FFFFFF\">Meow!</font>")
