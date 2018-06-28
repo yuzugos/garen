@@ -7,6 +7,8 @@ require ("DamageLib")
 -- Main Menu
 GMenu = Menu("G", "Garen")
 
+print("<font color=\"#0099FF\"><b>[Garen]: </b></font><font color=\"#FFFFFF\"> Garen Test!</font>")
+
 -- Combo Menu
 GMenu:SubMenu("c", "Combo")
 GMenu.c:Boolean("Q", "Use Q", true)
