@@ -1,53 +1,19 @@
---[[
-╔═══╦══╦═══╦═══╦╗─╔╗
-║╔══╣╔╗║╔═╗║╔══╣╚═╝║
-║║╔═╣╚╝║╚═╝║╚══╣╔╗─║
-║║╚╗║╔╗║╔╗╔╣╔══╣║╚╗║
-║╚═╝║║║║║║║║╚══╣║─║║
-╚═══╩╝╚╩╝╚╝╚═══╩╝─╚╝
-LoL Patch : 6.22
-Script Verison : 0.01
-by Shulepin
-_____________________
-
-Credits:
--Deftsu(http://gamingonsteroids.com/user/220-deftsu/)
--Zwei(http://gamingonsteroids.com/user/13058-zwei/)
--Noddy(http://gamingonsteroids.com/user/304-noddy/)
--Toshibiotro(http://gamingonsteroids.com/user/19993-toshibiotro/)
-]]--
-
---Hero
+-- Hero
 if GetObjectName(GetMyHero()) ~= "Garen" then return end
 
---Load Libs
+-- Load Libs
 require ("DamageLib")
 
---Auto Update
-local ver = "0.01"
-
-function AutoUpdate(data)
-    if tonumber(data) > tonumber(ver) then
-        print("<font color=\"#0099FF\"><b>[Garen]: </b></font><font color=\"#FFFFFF\"> New version found!</font>")
-        print("<font color=\"#0099FF\"><b>[Garen]: </b></font><font color=\"#FFFFFF\"> Downloading update, please wait...</font>")
-        DownloadFileAsync("https://raw.githubusercontent.com/BluePrinceEB/GoS/master/Garen.lua", SCRIPT_PATH .. "Garen.lua", function() print("<font color=\"#0099FF\"><b>[Garen]:</b></font><font color=\"#FFFFFF\"> Update Complete, please 2x F6!</font>") return end)
-    else
-       print("<font color=\"#0099FF\"><b>[Garen]: </b></font><font color=\"#FFFFFF\">No Updates found")
-    end
-end
-
-GetWebResultAsync("https://raw.githubusercontent.com/BluePrinceEB/GoS/master/Garen.version", AutoUpdate)
-
---Main Menu
+-- Main Menu
 GMenu = Menu("G", "Garen")
 
---Combo Menu
+-- Combo Menu
 GMenu:SubMenu("c", "Combo")
 GMenu.c:Boolean("Q", "Use Q", true)
 GMenu.c:Slider("Qrange", "Min. range for use Q", 300, 0, 1000, 10)
 GMenu.c:Boolean("E", "Use E", true)
 
---Ultimate Menu
+-- Ultimate Menu
 GMenu:SubMenu("u", "Ultimate")
 GMenu.u:Boolean("R", "Use R")
 GMenu.u:SubMenu("black", "Ultimate White List")
